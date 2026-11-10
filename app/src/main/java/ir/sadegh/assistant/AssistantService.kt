@@ -167,8 +167,7 @@ class AssistantService : Service() {
             putExtra(RecognizerIntent.EXTRA_MAX_RESULTS, 5)
             putExtra(RecognizerIntent.EXTRA_CALLING_PACKAGE, packageName)
             putExtra(RecognizerIntent.EXTRA_SPEECH_INPUT_COMPLETE_SILENCE_LENGTH_MILLIS, 1200L)
-            if (Build.VERSION.SDK_INT >= 33)
-                putExtra(RecognizerIntent.EXTRA_ADDITIONAL_LANGUAGES, arrayOf("en-US"))
+            putExtra("android.speech.extra.ADDITIONAL_LANGUAGES", arrayOf("en-US"))
         }
         rec?.startListening(i)
     }
